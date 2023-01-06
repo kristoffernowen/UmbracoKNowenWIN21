@@ -2,14 +2,22 @@
 
 
 <div class="background-lightgrey">
-    <div class="f-container showcase">
-        <div>
+    <div class="showcase">
+        <div class="item1">
             <img src="~/images/header-female.svg" alt="logo"/>
         </div>
-        <div class="boom">
-            hhhh
+        <div class="item2">
+            <div class="sale-div">
+                <h1>@Model.Value("saleHeadline")</h1>
+                <p>@Model.Value("saleExtraInfo")</p>
+                <div class="red-box">
+                    <div class="left-corner"></div>
+                    <p>@Model.Value("saleRedBox")</p>
+                    <div class="right-corner"></div>
+                </div>
+            </div>
         </div>
-        <div>
+        <div class="item3">
             <img src="~/images/header-male.svg" alt="logo"/>
         </div>
     </div>
