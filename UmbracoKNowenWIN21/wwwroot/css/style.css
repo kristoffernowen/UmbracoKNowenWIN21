@@ -13,7 +13,7 @@
 }
 
 .background-lightgrey {
-    background-color: var(--f-grey)
+    background-color: var(--f-grey);
 }
 
 .f-container {
@@ -21,6 +21,7 @@
     margin: auto;
 }
 
+/* navbar */
 
 .f-navbar {
     display: flex;
@@ -45,10 +46,10 @@
     color: var(--f-red);
 }
 
-/* umbraco active */
+
 .current {
     color: var(--f-red);
-} 
+}                /* umbraco active */
 
 .f-navbar a:hover {
     color: white;
@@ -70,4 +71,65 @@
     display: grid;
     place-items: center;
     box-shadow: 0.05rem 0.05rem 0.3rem 0.1rem #c1bdc5;
+}
+
+/* showcase */
+
+.showcase {
+    display: flex;
+    
+}
+
+.showcase .item2 {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 33%;
+    height: 52.8rem;
+}
+
+.showcase p, h1 {
+    margin: 1rem;
+}
+
+.sale-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.red-box {
+    position: relative;
+    background-color: var(--f-red);
+    height: 5rem;
+    width: 80%;
+    display: grid;
+    place-content: center;
+}
+
+.left-corner {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    position: absolute;
+    left: 5%;
+    top: 17%;
+    height: 33%;
+    width: 10%;
+}
+
+.right-corner {
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    position: absolute;
+    right: 5%;
+    bottom: 17%;
+    height: 33%;
+    width: 10%;
+}
+
+.red-box p {
+    color: white;
+    font-weight: 600;
 }
