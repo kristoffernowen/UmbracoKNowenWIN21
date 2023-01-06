@@ -13,7 +13,7 @@
 }
 
 .background-lightgrey {
-    background-color: var(--f-grey)
+    background-color: var(--f-grey);
 }
 
 .f-container {
@@ -21,6 +21,7 @@
     margin: auto;
 }
 
+/* navbar */
 
 .f-navbar {
     display: flex;
@@ -45,10 +46,10 @@
     color: var(--f-red);
 }
 
-/* umbraco active */
+
 .current {
     color: var(--f-red);
-} 
+}                /* umbraco active */
 
 .f-navbar a:hover {
     color: white;
@@ -70,4 +71,14 @@
     display: grid;
     place-items: center;
     box-shadow: 0.05rem 0.05rem 0.3rem 0.1rem #c1bdc5;
+}
+
+/* showcase */
+
+.showcase {
+    display: flex;
+}
+
+.showcase item2 {
+    flex-shrink: 0;
 }
