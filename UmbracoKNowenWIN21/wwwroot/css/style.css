@@ -1,2 +1,73 @@
-﻿body {
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --f-red: #ec7070;
+    --f-grey: rgb(246, 247, 253);
+    --f-black: rgb(16, 15, 15);
+    --f-semiblack:  rgb(87, 89, 93);
+}
+
+.background-lightgrey {
+    background-color: var(--f-grey)
+}
+
+.f-container {
+    width: 80%;
+    margin: auto;
+}
+
+
+.f-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.f-navbar li {
+    list-style: none;
+    display: inline-block;
+    margin: 1rem;
+    padding-top: 1rem;
+}
+
+.f-navbar a {
+    text-decoration: none;
+    color: var(--f-black);
+    border-radius: 5%;
+}
+
+.f-navbar a:active {
+    color: var(--f-red);
+}
+
+/* umbraco active */
+.current {
+    color: var(--f-red);
+} 
+
+.f-navbar a:hover {
+    color: white;
+    background-color: var(--f-semiblack);
+}
+
+.navbar-icons-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar-icons-div .icon-circle {
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0.05rem 0.05rem 0.3rem 0.1rem #c1bdc5;
 }
