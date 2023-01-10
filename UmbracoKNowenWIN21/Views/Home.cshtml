@@ -7,4 +7,24 @@
 
 <partial name="_Showcase" />
 
-<partial name="_Product" />
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("a43f7e29-160c-4822-9466-e0b548587598"))
+    .ChildrenOfType("product")
+    .Where(x => x.IsVisible());
+}
+
+<div class="d-flex justify-content-around">
+    	@foreach (var item in selection)
+	{
+	    <div>
+	        	
+			<a href="@item.Url()">@item.Name()</a>
+		
+		
+		    <partial name="_Product" model="@item" />
+	    </div>
+	}
+
+</div>
+
