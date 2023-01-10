@@ -134,15 +134,14 @@
     font-weight: 600;
 }
 
-.h1-test {
-    color: hotpink;
-}
+
 
 /* product partial */
 
 
 
 .product-box {
+    margin-top: 1rem;
     height: 15rem;
     width: 20rem;
 }
