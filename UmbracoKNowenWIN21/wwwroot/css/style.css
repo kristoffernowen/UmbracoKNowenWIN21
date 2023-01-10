@@ -133,3 +133,107 @@
     color: white;
     font-weight: 600;
 }
+
+.h1-test {
+    color: hotpink;
+}
+
+/* product partial */
+
+
+
+.product-box {
+    height: 15rem;
+    width: 20rem;
+}
+
+.product-square {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #e9ecf3;
+}
+
+.quick-view-icons {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 70%;
+}
+
+.icon-circle {
+    margin: .5rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: white;
+    display: grid;
+    place-items: center;
+    box-shadow: 0.05rem 0.05rem 0.3rem 0.1rem #c1bdc5;
+}
+
+.icon-circle a {
+    color: black;
+}
+
+.product-square .red-box {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #ec7070;
+    width: 100%;
+    height: 30%;
+    color: white;
+}
+
+.product-square .left-corner {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    position: absolute;
+    left: .6rem;
+    top: .6rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.product-square .right-corner {
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    position: absolute;
+    right: .6rem;
+    bottom: .6rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.product-square .red-box p {
+    color: white;
+    font-weight: 600;
+}
+
+.product-square:hover {
+    background-color: #a2a7ac;
+}
+
+.product-square:hover .quick-view-icons {
+    display: flex;
+}
+
+.product-square:hover .red-box {
+    display: grid;
+    place-items: center;
+}
+
+.product-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-text i {
+    color: #ec7070;
+}
