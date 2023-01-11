@@ -236,3 +236,21 @@
 .product-text i {
     color: #ec7070;
 }
+
+.footer {
+    border-top: 2px solid lightgrey;
+    margin-top: 3rem;
+}
+.footer-socialmedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-socialmedia i {
+    margin: 1rem;
+}
+.footer-copyright {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
