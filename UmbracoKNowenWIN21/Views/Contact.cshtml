@@ -12,15 +12,15 @@ allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></
 
     <form class="contact-form">
         
-        <h6>Come in contact with us</h6>
+        <h6>@Model.Value("formHeader")</h6>
         <div class="name-mail-div">
-            <input type="text" placeholder="Your Name" />
-            <input type="email" placeholder="Your Email" />
+            <input type="text" placeholder="@Model.Value("namePlaceholder")" />
+            <input type="email" placeholder="@Model.Value("emailPlaceholder")" />
         </div>
         <div class="comments-div">
-            <input type="text-area" placeholder="Comments" />
+            <input type="text-area" placeholder="@Model.Value("commentsPlaceholder")" />
         </div>
         <div>
-            <button>Post Comments</button>
+            <button>@Model.Value("contactButtonText")</button>
         </div>
     </form>
