@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+
+<div class="product-box">
+        <div class="product-square">
+
+            <div class="quick-view-icons">
+                <div class="icon-circle">
+                    <a href="https://www.dn.se/"><i class="fa-solid fa-heart"></i></a>
+                </div>
+                <div class="icon-circle">
+                    <a href=""><i class="fa-solid fa-arrows-spin"></i></a>
+                </div>
+                <div class="icon-circle">
+                    <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                </div>
+
+            </div>
+            <div class="red-box">
+                <div class="left-corner"></div>
+                <p>QUICK VIEW</p>
+                <div class="right-corner"></div>
+            </div>
+
+        </div>
+        <div class="product-text">
+            <p>Category</p>
+            <p><strong>@Model.Value("productName")</strong></p>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <p><strong>$35.00</strong></p>
+        </div>
+    </div>

@@ -12,15 +12,18 @@
     It also highlights the current active page/section in the navigation with the CSS class "current".
 *@
 
-@{ var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); }
+@{
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback)).ToArray();
+    var site = Model.Root();
+}
 
 
 <div class="background-lightgrey">
-      <nav class="f-navbar f-container">
-         <div>
+    <nav class="f-navbar f-container">
+        <div>
             <img src="~/images/logo.svg" alt="logo">
-         </div>
-         <div>
+        </div>
+        <div>
             <ul>
                 @if (selection?.Length > 0)
                 {
@@ -31,25 +34,25 @@
                         </li>
                     }
                 }
-               <li><a href="">Home</a></li>
-               <li><a href="">Contact</a></li>
-               <li><a href="">Products</a></li>
+                <li><a href="@site.Url()">Home</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Products</a></li>
             </ul>
-         </div>
-         <div class="navbar-icons-div">
+        </div>
+        <div class="navbar-icons-div">
             <div class="icon-circle">
-               <i class="fa-solid fa-magnifying-glass"></i>
-           </div>
-           <div class="icon-circle">
-               <i class="fa-solid fa-arrows-spin"></i>
-           </div>
-           <div class="icon-circle">
-               <i class="fa-solid fa-cart-shopping"></i>
-           </div>
-           <div class="icon-circle">
-               <i class="fa-solid fa-heart"></i>
-           </div>
-         </div>
-   
-      </nav>
-   </div>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="icon-circle">
+                <i class="fa-solid fa-arrows-spin"></i>
+            </div>
+            <div class="icon-circle">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+            <div class="icon-circle">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+        </div>
+
+    </nav>
+</div>
