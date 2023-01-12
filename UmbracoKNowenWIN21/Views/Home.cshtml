@@ -9,10 +9,13 @@
 
 
 @{
-	var selection = Umbraco.Content(Guid.Parse("a43f7e29-160c-4822-9466-e0b548587598"))
+	var selection = Umbraco.Content(Guid.Parse("7a8fc88f-b209-4036-8160-60590c61a599"))
     .ChildrenOfType("product")
     .Where(x => x.IsVisible());
 }
+
+
+
 
 <div class="d-flex justify-content-around">
     	@foreach (var item in selection)
