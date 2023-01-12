@@ -46,9 +46,9 @@
             color: var(--f-red);
         }
 
-.f-navbar .current {
-    color: var(--f-red);
-}
+    .f-navbar .current {
+        color: var(--f-red);
+    }
 /* umbraco active */
 
 /* .f-navbar a:hover { */
@@ -185,6 +185,7 @@
     width: 70%;
     margin: 3rem auto;
 }
+
     .breadcrumb a {
         text-decoration: none;
         color: var(--f-black);
