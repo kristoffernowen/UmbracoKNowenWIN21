@@ -46,16 +46,16 @@
             color: var(--f-red);
         }
 
-
-.current {
+        
+.f-navbar .current {
     color: var(--f-red);
 }
 /* umbraco active */
 
-.f-navbar a:hover {
-    color: white;
-    background-color: var(--f-semiblack);
-}
+/* .f-navbar a:hover { */
+/*     color: white; */
+/*     background-color: var(--f-semiblack); */
+/* } */
 
 .navbar-icons-div {
     display: flex;
@@ -179,6 +179,21 @@
     border: none;
 }
 
+
+/* breadcrumb */
+
+.breadcrumb {
+    width: 70%;
+    margin: 3rem auto;
+}
+    .breadcrumb a {
+        text-decoration: none;
+        color: var(--f-black);
+    }
+
+    .breadcrumb .active {
+        color: var(--f-red);
+    }
 /* product partial */
 
 
