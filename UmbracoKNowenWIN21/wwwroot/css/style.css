@@ -310,6 +310,7 @@
     border-top: 2px solid lightgrey;
     margin-top: 3rem;
     bottom: 0;
+    width: 100%;
 }
 
 .footer-socialmedia {

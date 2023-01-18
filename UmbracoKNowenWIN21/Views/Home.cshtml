@@ -2,7 +2,7 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = "_Layout.cshtml";
+    Layout = "_Layout.cshtml";
 }
 
 <div class="navbar-compensator"></div>
@@ -13,10 +13,20 @@
     <h4>@Model.Value("featuredProductsHeadline")</h4>
 </div>
 
-<div>
-    <h1 id="testHeader">Change</h1>
-</div>
+<h1 id="changeHeader">Change</h1>
+<button onclick="changeChange()">Change header</button>
 
 <div class="f-container">
     @await Html.GetBlockGridHtmlAsync(Model.FeaturedProductsContent)
 </div>
+
+<script>
+
+    function changeChange() {
+    if (document.getElementById('changeHeader').style.color === 'red') {
+        document.getElementById('changeHeader').style.color = 'black'
+    } else {
+        document.getElementById('changeHeader').style.color = 'red'
+    }
+}
+</script>
