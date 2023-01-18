@@ -5,6 +5,7 @@
 	Layout = "_Layout.cshtml";
 }
 
+
 <partial name="_Showcase" />
 
 
@@ -32,3 +33,6 @@
 
 <div class="m-5 p-5"></div>
 
+<div class="f-container">
+    @await Html.GetBlockGridHtmlAsync(Model.FeaturedProductsContent)
+</div>
