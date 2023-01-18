@@ -29,13 +29,13 @@
                 {
                     @foreach (var item in selection)
                     {
-                        <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-                            <a href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                        <li>
+                            <a  class="@(item.IsAncestorOrSelf(Model) ? "current" : null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
                         </li>
                     }
                 }
                 <li><a href="@site.Url()">Home</a></li>
-                <li><a href="">Products</a></li>
+                
             </ul>
         </div>
         <div class="navbar-icons-div">
