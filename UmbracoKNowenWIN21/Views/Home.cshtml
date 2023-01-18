@@ -8,30 +8,9 @@
 
 <partial name="_Showcase" />
 
-
-@{
-	var selection = Umbraco.Content(Guid.Parse("7a8fc88f-b209-4036-8160-60590c61a599"))
-    .ChildrenOfType("product")
-    .Where(x => x.IsVisible());
-}
-
-
-
-
-<div class="d-flex justify-content-around">
-    	@foreach (var item in selection)
-	{
-	    <div>
-	        	
-			<a href="@item.Url()">@item.Name()</a>
-		
-		
-		    <partial name="_Product" model="@item" />
-	    </div>
-	}
+<div class="f-container d-flex justify-content-center p-5">
+    <h4>@Model.Value("featuredProductsHeadline")</h4>
 </div>
-
-<div class="m-5 p-5"></div>
 
 <div class="f-container">
     @await Html.GetBlockGridHtmlAsync(Model.FeaturedProductsContent)
