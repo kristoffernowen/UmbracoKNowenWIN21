@@ -2,13 +2,16 @@
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
 
 @{
-        var product =  Model.Content.Value<IPublishedContent>("productBraco");
+    var product = Model.Content.Value<IPublishedContent>("productBraco");
     var productName = product.GetProperty("productName");
     var productCategory = product.GetProperty("productCategory");
+    var productRating = product.GetProperty("productRating");
     var imageUrl = product.Value<IPublishedContent>("productImage");
-} 
+}
+
 
 <div style="height: 400px;">
+
     <div class="product-box">
         <a href="@product.Url()">
             <div class="product-square">
@@ -25,29 +28,32 @@
                     <div class="icon-circle">
                         <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
                     </div>
-
                 </div>
                 <div class="red-box">
                     <div class="left-corner"></div>
                     <p>QUICK VIEW</p>
                     <div class="right-corner"></div>
                 </div>
-
             </div>
         </a>
+
         <div class="product-text">
             <p>@productCategory.GetValue()</p>
-            <p><strong>@productName.GetValue()</strong></p>
+            <a class="nav-link" href="@product.Url()"><p><strong>@productName.GetValue()</strong></p></a>
             <div>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+                @{
+                    var rating = (int)productRating.GetValue();
+
+                    if (rating is < 6 and > 0)
+                    {
+                        for (var i = 0; i < rating; i++)
+                        {
+                            <i class="fa-solid fa-star"></i>
+                        }
+                    }
+                }
             </div>
             <p><strong>$35.00</strong></p>
-            
         </div>
-        
     </div>
 </div>
