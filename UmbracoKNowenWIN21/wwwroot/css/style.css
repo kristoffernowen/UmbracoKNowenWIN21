@@ -21,7 +21,18 @@
     margin: auto;
 }
 
+.navbar-compensator {
+    height: 5.45rem;
+}
+
 /* navbar */
+
+.fixed-navbar {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    top: 0;
+}
 
 .f-navbar {
     display: flex;
@@ -204,6 +215,7 @@
     width: 20rem;
 }
 
+
 .product-square {
     position: relative;
     height: 100%;
@@ -298,6 +310,8 @@
 .footer {
     border-top: 2px solid lightgrey;
     margin-top: 3rem;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-socialmedia {
