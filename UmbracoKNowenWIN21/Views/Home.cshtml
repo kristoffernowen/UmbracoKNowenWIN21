@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    Layout = "_Layout.cshtml";
+}
+
+<div class="navbar-compensator"></div>
+
+<partial name="_Showcase" />
+
+<div class="f-container d-flex justify-content-center p-5">
+    <h4>@Model.Value("featuredProductsHeadline")</h4>
+</div>
+
+<div class="f-container">
+    @await Html.GetBlockGridHtmlAsync(Model.FeaturedProductsContent)
+</div>

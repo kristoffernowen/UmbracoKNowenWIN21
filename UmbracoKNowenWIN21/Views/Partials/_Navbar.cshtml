@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Extensions
+
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+    This snippet displays a list of links of the pages immediately under the top-most page in the content tree.
+    This is the home page for a standard website.
+    It also highlights the current active page/section in the navigation with the CSS class "current".
+*@
+
+@{
+    var selection = Model.Root().Children.Where(x => x.IsVisible(PublishedValueFallback) && x.ContentType.Alias != "product").ToArray();
+    var site = Model.Root();
+}
+
+
+<nav id="myNavbar" class="fixed-navbar" >
+    <div class="background-lightgrey w-100">
+        <div class="f-navbar f-container">
+            <div>
+                <img src="~/images/logo.svg" alt="logo">
+            </div>
+            <div>
+                <ul>
+                    @if (selection?.Length > 0)
+                    {
+                        @foreach (var item in selection)
+                        {
+                            <li>
+                                <a  class="@(item.IsAncestorOrSelf(Model) ? "current" : null)" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                            </li>
+                        }
+                    }
+                    <li><a class="@(Model.Id == site.Id ? "current" : null)" href="@site.Url()">Home</a></li>
+                
+                </ul>
+            </div>
+            <div class="navbar-icons-div">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-arrows-spin"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+                <div class="icon-circle">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>

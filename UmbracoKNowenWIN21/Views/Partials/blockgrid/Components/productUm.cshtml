@@ -1,0 +1,72 @@
+﻿@using Umbraco.Extensions
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockGridItem>
+
+@{
+    var product = Model.Content.Value<IPublishedContent>("productBraco");
+    var productName = product.GetProperty("productName");
+    var productCategory = product.GetProperty("productCategory");
+    var productRating = product.GetProperty("productRating");
+    var productPrice = product.GetProperty("productPrice");
+    var imageUrl = product.Value<IPublishedContent>("productImage");
+    var redBoxText = product.GetProperty("productRedBox");
+
+    var substituteImage = "https://images.pexels.com/photos/11350818/pexels-photo-11350818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
+}
+
+
+<div style="height: 400px;">
+
+    <div class="product-box">
+        <a href="@product.Url()">
+            <div class="product-square">
+                <div class="w-100 h-100">
+                    @if (imageUrl != null)
+                    {
+                        <img class="w-100 h-100" src="@imageUrl.Url()" alt="image" />
+                    }
+                    else
+                    {
+                        <img class="w-100 h-100" src="@substituteImage" alt="image" />
+                    }
+                    
+                </div>
+                <div class="quick-view-icons">
+                    <div class="icon-circle">
+                        <a href="https://www.dn.se/"><i class="fa-solid fa-heart"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href=""><i class="fa-solid fa-arrows-spin"></i></a>
+                    </div>
+                    <div class="icon-circle">
+                        <a href=""><i class="fa-solid fa-bag-shopping"></i></a>
+                    </div>
+                </div>
+                <div class="red-box">
+                    <div class="left-corner"></div>
+                    <p>@redBoxText.GetValue()</p>
+                    <div class="right-corner"></div>
+                </div>
+            </div>
+        </a>
+
+        <div class="product-text">
+            <p>@productCategory.GetValue()</p>
+            <a class="nav-link" href="@product.Url()"><p><strong>@productName.GetValue()</strong></p></a>
+            <div>
+                @{
+                    var rating = (int)productRating.GetValue();
+
+                    if (rating is < 6 and > 0)
+                    {
+                        for (var i = 0; i < rating; i++)
+                        {
+                            <i class="fa-solid fa-star"></i>
+                        }
+                    }
+                }
+            </div>
+            <p><strong>@productPrice.GetValue()</strong></p>
+        </div>
+    </div>
+</div>
