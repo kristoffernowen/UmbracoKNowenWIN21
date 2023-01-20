@@ -12,6 +12,7 @@
 
 @{
     var imageUrl = Model.Value<IPublishedContent>("productImage");
+    var substituteImage = "https://images.pexels.com/photos/11350818/pexels-photo-11350818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
 }
 
 
@@ -27,9 +28,14 @@
             <div class="product-box">
 
                 <div class="product-square">
-                    <div class="w-100 h-100">
+                    @if (imageUrl != null)
+                    {
                         <img class="w-100 h-100" src="@imageUrl.Url()" alt="image" />
-                    </div>
+                    }
+                    else
+                    {
+                        <img class="w-100 h-100" src="@substituteImage" alt="image" />
+                    }
                     <div class="quick-view-icons">
                         <div class="icon-circle">
                             <a href="https://www.dn.se/"><i class="fa-solid fa-heart"></i></a>
@@ -43,7 +49,7 @@
                     </div>
                     <div class="red-box">
                         <div class="left-corner"></div>
-                        <p>QUICK VIEW</p>
+                        <p>@Model.Value("productRedBox")</p>
                         <div class="right-corner"></div>
                     </div>
                 </div>
@@ -67,12 +73,13 @@
                         }
 
                     </div>
-                    <p><strong>$35.00</strong></p>
+                    <p><strong>@Model.Value("productPrice")</strong></p>
                 </div>
             </div>
         </div>
     </div>
     <div class="m-5 p-5">
+        <h3 class="mb-2">@Model.Value("productDescriptionHeader")</h3>
         <p>@Model.Value("productDescription")</p>
     </div>
 </div>

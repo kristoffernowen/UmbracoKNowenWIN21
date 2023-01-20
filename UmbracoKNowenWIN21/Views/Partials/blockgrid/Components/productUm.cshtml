@@ -6,7 +6,12 @@
     var productName = product.GetProperty("productName");
     var productCategory = product.GetProperty("productCategory");
     var productRating = product.GetProperty("productRating");
+    var productPrice = product.GetProperty("productPrice");
     var imageUrl = product.Value<IPublishedContent>("productImage");
+    var redBoxText = product.GetProperty("productRedBox");
+
+    var substituteImage = "https://images.pexels.com/photos/11350818/pexels-photo-11350818.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1";
+
 }
 
 
@@ -16,7 +21,15 @@
         <a href="@product.Url()">
             <div class="product-square">
                 <div class="w-100 h-100">
-                    <img class="w-100 h-100" src="@imageUrl.Url()" alt="image" />
+                    @if (imageUrl != null)
+                    {
+                        <img class="w-100 h-100" src="@imageUrl.Url()" alt="image" />
+                    }
+                    else
+                    {
+                        <img class="w-100 h-100" src="@substituteImage" alt="image" />
+                    }
+                    
                 </div>
                 <div class="quick-view-icons">
                     <div class="icon-circle">
@@ -31,7 +44,7 @@
                 </div>
                 <div class="red-box">
                     <div class="left-corner"></div>
-                    <p>QUICK VIEW</p>
+                    <p>@redBoxText.GetValue()</p>
                     <div class="right-corner"></div>
                 </div>
             </div>
@@ -53,7 +66,7 @@
                     }
                 }
             </div>
-            <p><strong>$35.00</strong></p>
+            <p><strong>@productPrice.GetValue()</strong></p>
         </div>
     </div>
 </div>
